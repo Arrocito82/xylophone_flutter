@@ -1,9 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const XylophoneApp());
-}
+void main() => runApp(const XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
   const XylophoneApp({super.key});
@@ -71,9 +69,7 @@ class _XylophoneState extends State<Xylophone> {
       required String chord}) {
     return Expanded(
       child: TextButton(
-        onPressed: () {
-          playSound(soundNumber: soundNumber);
-        },
+        onPressed: () => playSound(soundNumber: soundNumber),
         style: ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(chordColor),
         ),
