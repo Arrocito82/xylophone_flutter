@@ -59,125 +59,56 @@ class Xylophone extends StatefulWidget {
 }
 
 class _XylophoneState extends State<Xylophone> {
+  void playSound({required int soundNumber}) async {
+    final player = AudioPlayer();
+    await player.setSourceAsset('note$soundNumber.wav');
+    await player.resume();
+  }
+
+  Expanded chordNote(
+      {required int soundNumber,
+      required Color chordColor,
+      required String chord}) {
+    return Expanded(
+      child: TextButton(
+        onPressed: () {
+          playSound(soundNumber: soundNumber);
+        },
+        style: ButtonStyle(
+          backgroundColor: MaterialStatePropertyAll(chordColor),
+        ),
+        child: Text(
+          chord,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSourceAsset('note1.wav');
-                await player.resume();
-              },
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStatePropertyAll(Colors.green.shade100),
-              ),
-              child: Text(
-                "C",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSourceAsset('note2.wav');
-                await player.resume();
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.green.shade200)),
-              child: Text(
-                "D",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSourceAsset('note3.wav');
-                await player.resume();
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.green.shade300)),
-              child: Text(
-                "E",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSourceAsset('note4.wav');
-                await player.resume();
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.green.shade400)),
-              child: Text(
-                "F",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSourceAsset('note5.wav');
-                await player.resume();
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.green.shade500)),
-              child: Text(
-                "G",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSourceAsset('note6.wav');
-                await player.resume();
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.green.shade600)),
-              child: Text(
-                "A",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          Expanded(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSourceAsset('note7.wav');
-                await player.resume();
-              },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.green.shade700)),
-              child: Text(
-                "B",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
+          chordNote(
+              soundNumber: 1, chordColor: Colors.green.shade200, chord: "C"),
+          chordNote(
+              soundNumber: 2, chordColor: Colors.green.shade300, chord: "D"),
+          chordNote(
+              soundNumber: 3, chordColor: Colors.green.shade400, chord: "E"),
+          chordNote(
+              soundNumber: 4, chordColor: Colors.green.shade500, chord: "F"),
+          chordNote(
+              soundNumber: 5, chordColor: Colors.green.shade600, chord: "G"),
+          chordNote(
+              soundNumber: 6, chordColor: Colors.green.shade700, chord: "A"),
+          chordNote(
+              soundNumber: 7, chordColor: Colors.green.shade800, chord: "B"),
         ],
       ),
     );
