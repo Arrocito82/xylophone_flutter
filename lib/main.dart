@@ -59,7 +59,6 @@ class Xylophone extends StatefulWidget {
 }
 
 class _XylophoneState extends State<Xylophone> {
-  // AudioPlayer player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -70,16 +69,17 @@ class _XylophoneState extends State<Xylophone> {
             child: TextButton(
               onPressed: () async {
                 final player = AudioPlayer();
-                // setState(() {
                 await player.setSourceAsset('note1.wav');
-                // });
                 await player.resume();
               },
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStatePropertyAll(Colors.green.shade100),
               ),
-              child: SizedBox(),
+              child: Text(
+                "C",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Expanded(
@@ -92,7 +92,10 @@ class _XylophoneState extends State<Xylophone> {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStatePropertyAll(Colors.green.shade200)),
-              child: SizedBox(),
+              child: Text(
+                "D",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Expanded(
@@ -105,7 +108,10 @@ class _XylophoneState extends State<Xylophone> {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStatePropertyAll(Colors.green.shade300)),
-              child: SizedBox(),
+              child: Text(
+                "E",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Expanded(
@@ -118,7 +124,10 @@ class _XylophoneState extends State<Xylophone> {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStatePropertyAll(Colors.green.shade400)),
-              child: SizedBox(),
+              child: Text(
+                "F",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Expanded(
@@ -131,7 +140,10 @@ class _XylophoneState extends State<Xylophone> {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStatePropertyAll(Colors.green.shade500)),
-              child: SizedBox(),
+              child: Text(
+                "G",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Expanded(
@@ -144,7 +156,10 @@ class _XylophoneState extends State<Xylophone> {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStatePropertyAll(Colors.green.shade600)),
-              child: SizedBox(),
+              child: Text(
+                "A",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Expanded(
@@ -157,7 +172,10 @@ class _XylophoneState extends State<Xylophone> {
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStatePropertyAll(Colors.green.shade700)),
-              child: SizedBox(),
+              child: Text(
+                "B",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ],
