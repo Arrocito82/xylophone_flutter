@@ -59,6 +59,7 @@ class Xylophone extends StatefulWidget {
 }
 
 class _XylophoneState extends State<Xylophone> {
+  // AudioPlayer player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -67,21 +68,26 @@ class _XylophoneState extends State<Xylophone> {
         children: [
           Expanded(
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 final player = AudioPlayer();
-                player.play(AssetSource('note1.wav'));
+                // setState(() {
+                await player.setSourceAsset('note1.wav');
+                // });
+                await player.resume();
               },
               style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.green.shade100)),
+                backgroundColor:
+                    MaterialStatePropertyAll(Colors.green.shade100),
+              ),
               child: SizedBox(),
             ),
           ),
           Expanded(
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 final player = AudioPlayer();
-                player.play(AssetSource('note2.wav'));
+                await player.setSourceAsset('note2.wav');
+                await player.resume();
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -91,9 +97,10 @@ class _XylophoneState extends State<Xylophone> {
           ),
           Expanded(
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 final player = AudioPlayer();
-                player.play(AssetSource('note3.wav'));
+                await player.setSourceAsset('note3.wav');
+                await player.resume();
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -103,9 +110,10 @@ class _XylophoneState extends State<Xylophone> {
           ),
           Expanded(
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 final player = AudioPlayer();
-                player.play(AssetSource('note4.wav'));
+                await player.setSourceAsset('note4.wav');
+                await player.resume();
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -115,9 +123,10 @@ class _XylophoneState extends State<Xylophone> {
           ),
           Expanded(
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 final player = AudioPlayer();
-                player.play(AssetSource('note5.wav'));
+                await player.setSourceAsset('note5.wav');
+                await player.resume();
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -127,9 +136,10 @@ class _XylophoneState extends State<Xylophone> {
           ),
           Expanded(
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 final player = AudioPlayer();
-                player.play(AssetSource('note6.wav'));
+                await player.setSourceAsset('note6.wav');
+                await player.resume();
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -139,9 +149,10 @@ class _XylophoneState extends State<Xylophone> {
           ),
           Expanded(
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 final player = AudioPlayer();
-                player.play(AssetSource('note7.wav'));
+                await player.setSourceAsset('note7.wav');
+                await player.resume();
               },
               style: ButtonStyle(
                   backgroundColor:
